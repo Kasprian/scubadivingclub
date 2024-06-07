@@ -1,2 +1,3 @@
 # scubadivingclub
-Scuba diving website for communal club.
+Scuba diving website for the communal club.
+NOT PUBLISHED YET
