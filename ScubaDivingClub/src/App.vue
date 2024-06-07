@@ -1,25 +1,40 @@
+<template>
+  <v-app>
+    <v-app-bar app>
+      <v-toolbar-title>Scuba Diving Club</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn text to="/">{{ $t('message.home') }}</v-btn>
+      <v-btn text to="/about">{{ $t('message.about') }}</v-btn>
+      <v-btn text to="/events">{{ $t('message.events') }}</v-btn>
+      <v-btn text to="/contact">{{ $t('message.contact') }}</v-btn>
+      <v-btn text to="/blog">{{ $t('message.blog') }}</v-btn>
+      <v-select
+        v-model="locale"
+        :items="languages"
+        label="Language"
+        @change="changeLanguage"
+      ></v-select>
+    </v-app-bar>
+
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+  </v-app>
+</template>
+
 <script setup lang="ts">
-// Remove the default component imports
-// import HelloWorld from './components/HelloWorld.vue'
-// import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+const languages = ref(['en', 'pl'])
+
+const changeLanguage = (lang: string) => {
+  locale.value = lang
+}
 </script>
 
-<template>
-  <header>
-    <nav>
-      <ul>
-        <li><router-link to="/">Home</router-link></li>
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/events">Events</router-link></li>
-        <li><router-link to="/contact">Contact</router-link></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <router-view />
-  </main>
-</template>
+<style scoped></style>
 
 <style scoped>
 header {
