@@ -37,3 +37,10 @@ npm run build
 ```sh
 npm run lint
 ```
+
+=======
+
+# scubadivingclub
+
+Scuba diving website for the communal club.
+NOT PUBLISHED YET
