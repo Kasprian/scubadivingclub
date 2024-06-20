@@ -1,4 +1,5 @@
 /* eslint-env node */
+/*global require, module*/
 require('@rushstack/eslint-patch/modern-module-resolution')
 
 module.exports = {

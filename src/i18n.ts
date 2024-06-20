@@ -14,7 +14,7 @@ import plContact from './locales/pl/contact.json'
 import plBlog from './locales/pl/blog.json'
 
 const messages = {
-  en: {
+  EN: {
     message: {
       ...enHome.message,
       ...enAbout.message,
@@ -23,7 +23,7 @@ const messages = {
       ...enBlog.message
     }
   },
-  pl: {
+  PL: {
     message: {
       ...plHome.message,
       ...plAbout.message,
@@ -36,8 +36,8 @@ const messages = {
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'pl', // set locale
-  fallbackLocale: 'pl', // set fallback locale
+  locale: 'PL', // set locale
+  fallbackLocale: 'PL', // set fallback locale
   messages // set locale messages
 })
 

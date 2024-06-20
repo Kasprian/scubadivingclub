@@ -2,24 +2,13 @@
   <v-app>
     <v-app-bar class="toolbar" app color="transparent" elevation="0">
       <v-toolbar-title class="mr-12"> Klub Nurkowy Siechnice </v-toolbar-title>
-      <v-btn text to="/">{{ $t('message.home') }}</v-btn>
-      <v-btn text to="/events">{{ $t('message.events') }}</v-btn>
-      <v-btn text to="/blog">{{ $t('message.blog') }}</v-btn>
-      <v-btn text to="/contact">{{ $t('message.contact') }}</v-btn>
-      <div id="menu-wrapper" class="menu-wrapper">
-        <v-menu v-model="menuOpen" :close-on-content-click="false" attach="#menu-wrapper">
-          <template v-slot:activator="{ on, attrs }">
-            <v-btn text v-bind="attrs" v-on="on" @click="toggleMenu">
-              {{ currentLanguage }}
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item v-for="lang in languages" :key="lang" @click="changeLanguage(lang)" right>
-              <v-list-item-title>{{ lang }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </div>
+      <v-btn to="/">{{ $t('message.home') }}</v-btn>
+      <v-btn to="/events">{{ $t('message.events') }}</v-btn>
+      <v-btn to="/blog">{{ $t('message.blog') }}</v-btn>
+      <v-btn to="/contact">{{ $t('message.contact') }}</v-btn>
+      <v-btn @click="toggleLanguage">
+        {{ currentLanguage }}
+      </v-btn>
     </v-app-bar>
 
     <v-main class="background-image">
@@ -34,19 +23,20 @@ import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterComponent from './components/FooterComponent.vue'
 
-const { locale } = useI18n()
-const languages = ref(['en', 'pl'])
+const { locale, t } = useI18n()
 const currentLanguage = ref<string>(locale.value)
-const menuOpen = ref<boolean>(false)
 
-const toggleMenu = () => {
-  menuOpen.value = !menuOpen.value
+const toggleLanguage = () => {
+  if (currentLanguage.value === 'PL') {
+    changeLanguage('EN')
+  } else {
+    changeLanguage('PL')
+  }
 }
 
-const changeLanguage = (lang: string) => {
-  locale.value = lang
-  currentLanguage.value = lang
-  menuOpen.value = false // Close the dropdown menu after selecting a language
+const changeLanguage = (language: string) => {
+  locale.value = language
+  currentLanguage.value = language
 }
 </script>
 <style scoped>
@@ -63,6 +53,10 @@ const changeLanguage = (lang: string) => {
 }
 .menu-wrapper {
   position: relative;
+}
+.v-list {
+  background-color: #102c57 !important;
+  color: white;
 }
 
 @media (min-width: 1024px) {
