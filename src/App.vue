@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar class="toolbar" app color="transparent" elevation="0">
-      <v-toolbar-title class="mr-12">Scuba Diving Club</v-toolbar-title>
+      <v-toolbar-title class="mr-12"> Klub Nurkowy Siechnice </v-toolbar-title>
       <v-btn text to="/">{{ $t('message.home') }}</v-btn>
       <v-btn text to="/events">{{ $t('message.events') }}</v-btn>
       <v-btn text to="/blog">{{ $t('message.blog') }}</v-btn>
@@ -25,17 +25,19 @@
     <v-main class="background-image">
       <router-view></router-view>
     </v-main>
+    <FooterComponent></FooterComponent>
   </v-app>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import FooterComponent from './components/FooterComponent.vue'
 
 const { locale } = useI18n()
 const languages = ref(['en', 'pl'])
-const currentLanguage = ref(locale.value)
-const menuOpen = ref(false)
+const currentLanguage = ref<string>(locale.value)
+const menuOpen = ref<boolean>(false)
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -55,29 +57,12 @@ const changeLanguage = (lang: string) => {
   background-repeat: no-repeat; /* Prevent image from repeating */
   min-height: 100vh; /* Ensure it covers the full viewport height */
 }
->>> .v-toolbar__content {
+
+::v-deep(.v-toolbar__content) {
   overflow: visible !important;
 }
 .menu-wrapper {
   position: relative;
-}
-
-.language-menu .v-menu__content {
-  right: 0;
-  left: auto;
-}
-header {
-  line-height: 1.5;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 10px;
 }
 
 @media (min-width: 1024px) {

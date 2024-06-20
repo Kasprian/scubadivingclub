@@ -1,5 +1,10 @@
 {
   "message": {
-    "contact": "Contact"
+    "contact": "Contact",
+    "contact_title": "Do you have questions? Would you like to join us? Leave us a message.",
+    "name_label": "Name",
+    "email_label": "Email",
+    "message_label": "Message",
+    "send_button": "Send"
   }
 }

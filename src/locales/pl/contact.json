@@ -1,5 +1,10 @@
 {
   "message": {
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "contact_title": "Masz pytania? Chcesz do nas dołączyć? Zostaw nam wiadomość.",
+    "name_label": "Imię",
+    "email_label": "Email",
+    "message_label": "Wiadomość",
+    "send_button": "Wyślij"
   }
 }

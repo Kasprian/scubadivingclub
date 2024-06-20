@@ -2,10 +2,10 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <v-card>
+        <v-card class="blog">
           <v-card-title>Blog</v-card-title>
           <v-card-text>
-            <v-list>
+            <v-list class="blog">
               <v-list-item v-for="post in posts" :key="post.id" @click="goToPost(post.id)">
                 <v-list-item-content>
                   <v-list-item-title>{{ post.title }}</v-list-item-title>
@@ -37,4 +37,12 @@ const goToPost = (id: number) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.blog {
+  background-color: #102c57;
+  color: #f3f7ec;
+}
+.v-list-item:hover {
+  background-color: #028391;
+}
+</style>

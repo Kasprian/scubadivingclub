@@ -1,5 +1,6 @@
 {
   "message": {
-    "events": "Events"
+    "events": "Events",
+    "eventstitle": "Previous events"
   }
 }
