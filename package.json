@@ -41,5 +41,6 @@
     "typescript-eslint": "^7.12.0",
     "vite": "^5.2.8",
     "vue-tsc": "^2.0.11"
-  }
+  },
+  "homepage": "https://kasprian.github.io/scubadivingclub/"
 }

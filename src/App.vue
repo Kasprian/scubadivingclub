@@ -6,9 +6,6 @@
       <v-btn to="/events">{{ $t('message.events') }}</v-btn>
       <v-btn to="/blog">{{ $t('message.blog') }}</v-btn>
       <v-btn to="/contact">{{ $t('message.contact') }}</v-btn>
-      <v-btn @click="toggleLanguage">
-        {{ currentLanguage }}
-      </v-btn>
     </v-app-bar>
 
     <v-main class="background-image">
@@ -19,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+/*/import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterComponent from './components/FooterComponent.vue'
 
@@ -37,7 +34,7 @@ const toggleLanguage = () => {
 const changeLanguage = (language: string) => {
   locale.value = language
   currentLanguage.value = language
-}
+}*/
 </script>
 <style scoped>
 .background-image {
