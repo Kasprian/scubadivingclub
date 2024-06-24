@@ -3,7 +3,7 @@
     <v-col>
       <v-row>
         <v-col cols="12">
-          <span>&copy; 2024 Scuba Diving Club. All Rights Reserved.</span>
+          <span>&copy; 2024 Klub Nurkowy Siechnice. All Rights Reserved.</span>
         </v-col>
       </v-row>
     </v-col>

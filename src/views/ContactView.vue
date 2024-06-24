@@ -26,8 +26,7 @@ const email = ref('')
 const message = ref('')
 
 const submitForm = () => {
-  alert(`Thank you, ${name.value}! We will get back to you soon.`)
-  // Add form submission logic here
+
 }
 </script>
 <style scoped>
